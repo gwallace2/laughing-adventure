@@ -1,2 +1,57 @@
 Bisection algorithm:
-	Usage: 
+	Usage: Bisection a b tol 
+
+	Uses a bisection algorithm to find one of the function's roots. A and 
+	B are the left and right bounds, respectively, for an initial guess.
+	The root found will fall between a and b. The argument tol specifies
+	the tolerance desired for the root (i.e. if tol = 1e-3 and the true
+	root is 1, the root computed by the program will be no less than
+	0.999, and will be no greater than 1.001).
+
+	The algorithm will fail to converge under the following conditions:
+		1. The given a and b do not bracket a root.
+		2. The bracketed root has even multiplicity.
+
+	The algorithm will converge faster based on how small the bracket is.
+
+	Order of convergence:
+		linear (1)
+
+
+Newton's algorithm:
+	Usage: Newtons x0 tol
+
+	Uses Newton's algorithm to find one of the function's roots. The
+	argument x0 specifies the initial "guess". The argument tol specifies
+	the tolerance desired for the root.
+
+	The algorithm will fail to converge under the following conditions:
+		1. The function has no real roots.
+		2. The function g(x) has a derivative less than 1, where...
+			g(x) = x - f(x)/f'(x)
+
+	The algorithm will converge faster based on how close the initial guess
+	is to an actual root.
+
+	Order of convergence:
+		quadratic (2)
+
+
+Secant algorithm:
+	Usage: Newtons x0 x1 tol
+
+	Uses the secant method to find one of the function's roots. The argument	x0 specifies the initial "guess", and x1 specifies a second guess. The
+	argument tol specifies the tolerance desired for the root.
+
+	The algorithm will fail to converge under the following conditions:
+	1. The function has no real roots.
+	2. The function g(x,xprev) has a derivative less than 1, where...
+		g(x,xprev) = x - f(x-xprev)/f'(x-xprev)
+	   x is the current guess, and xprev is the previous guess.
+
+	The algorithm will converge faster based on how close either initial
+	guess is to an actual root, and how close both guesses are to one
+	another.
+	
+	Order of convergence:
+		superlinear (1.618...)

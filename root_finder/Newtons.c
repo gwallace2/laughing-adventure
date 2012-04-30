@@ -36,10 +36,15 @@ int main( int argc, char* argv[] ) {
     }
     double f_curX;
     f( &f_curX, curX );
+    printf( "---------" );
+    printf( "---------" );
+    printf( "--------\n" );
+    printf( "Total iterations: %d\n", n - 1 );
     printf( "f( %lf ) = %lf\n", curX, f_curX );
   } else {
     printf( "Usage: %s x0 tol\n", argv[ 0 ] );
   }
+  return 0;
 }
 
 void f( double* y, double x ) {

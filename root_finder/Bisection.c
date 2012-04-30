@@ -69,6 +69,10 @@ int main( int argc, char* argv[] ) {
     if( done == 1 ) {
       double funcVal;
       f( &funcVal, root );
+      printf( "---------" );
+      printf( "---------" );
+      printf( "--------\n" );
+      printf( "Total iterations: %d\n", n - 1 );
       printf( "f( %lf ) = %lf\n", root, funcVal );
     } else if( done == 2 ) {
       printf( "could not compute root\n" );

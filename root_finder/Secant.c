@@ -47,6 +47,10 @@ int main( int argc, char* argv[] ) {
 			printf( "%8d %8.5lf %8.5lf\n", n, curr, f_curr ); 
 		}
 		f( &funcVal, next );	
+		printf( "---------" );
+		printf( "---------" );
+		printf( "--------\n" );
+		printf( "Total iterations: %d\n", n - 1 );
 		printf( "f( %lf ) = %lf\n", next, funcVal ); 
 	} else {
 		printf( "Usage: %s x0 x1 tol\n", argv[ 0 ] );
